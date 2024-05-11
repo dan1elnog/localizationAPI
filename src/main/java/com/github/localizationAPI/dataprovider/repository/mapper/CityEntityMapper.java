@@ -11,4 +11,6 @@ public interface CityEntityMapper {
     CityEntity INSTANCE = Mappers.getMapper(CityEntity.class);
 
     CityEntity toCityEntity(City city);
+
+    City toCity(CityEntity cityEntity);
 }

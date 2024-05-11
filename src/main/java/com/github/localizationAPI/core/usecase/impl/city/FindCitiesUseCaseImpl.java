@@ -16,6 +16,6 @@ public class FindCitiesUseCaseImpl implements FindCitiesUseCase {
 
     @Override
     public Page<City> execute(Pageable pageable) {
-        return findCities.execute();
+        return findCities.execute(pageable);
     }
 }

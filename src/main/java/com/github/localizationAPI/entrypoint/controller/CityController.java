@@ -3,8 +3,11 @@ package com.github.localizationAPI.entrypoint.controller;
 import com.github.localizationAPI.entrypoint.controller.gateway.CityGateway;
 import com.github.localizationAPI.entrypoint.controller.request.InsertCityRequest;
 import com.github.localizationAPI.entrypoint.controller.response.ApplicationResponse;
+import com.github.localizationAPI.entrypoint.controller.response.CityResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,9 +25,9 @@ public class CityController {
     }
 
     @GetMapping
-    private ResponseEntity<ApplicationResponse<String>> findCities(){
-
-        return ResponseEntity.ok().build();
+    private ResponseEntity<ApplicationResponse<Page<CityResponse>>> findCities(Pageable pageable){
+        Page<CityResponse> citiesResponse = cityGateway.findCities(pageable);
+        return ResponseEntity.ok(new ApplicationResponse<>(citiesResponse, "cities successfully found"));
     }
 
 }
