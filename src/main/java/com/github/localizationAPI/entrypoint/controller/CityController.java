@@ -30,4 +30,10 @@ public class CityController {
         return ResponseEntity.ok(new ApplicationResponse<>(citiesResponse, "cities successfully found"));
     }
 
+    @GetMapping(path = "/{name}")
+    private ResponseEntity<ApplicationResponse<Page<CityResponse>>> findCities(@PathVariable String name, Pageable pageable){
+        Page<CityResponse> citiesResponse = cityGateway.findCitiesByName(name, pageable);
+        return ResponseEntity.ok(new ApplicationResponse<>(citiesResponse, "cities successfully found"));
+    }
+
 }
