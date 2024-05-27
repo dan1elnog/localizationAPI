@@ -4,7 +4,6 @@ import com.github.localizationAPI.core.domain.City;
 import com.github.localizationAPI.core.usecase.city.FindCitiesByNameUseCase;
 import com.github.localizationAPI.core.usecase.city.FindCitiesUseCase;
 import com.github.localizationAPI.core.usecase.city.InsertCityUseCase;
-import com.github.localizationAPI.dataprovider.repository.entity.CityEntity;
 import com.github.localizationAPI.entrypoint.controller.mapper.CityControllerMapper;
 import com.github.localizationAPI.entrypoint.controller.request.InsertCityRequest;
 import com.github.localizationAPI.entrypoint.controller.response.CityResponse;
