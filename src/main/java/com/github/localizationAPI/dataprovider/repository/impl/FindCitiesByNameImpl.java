@@ -21,7 +21,7 @@ public class FindCitiesByNameImpl implements FindCitiesByName {
 
     @Override
     public Page<City> execute(String name, Pageable pageable) {
-        Page<CityEntity> cityEntityPage = cityRepository.findByName(name, pageable);
+        Page<CityEntity> cityEntityPage = cityRepository.findByNameContaining(name, pageable);
         return cityEntityPage.map(cityEntityMapper::toCity);
     }
 }
