@@ -15,8 +15,7 @@ public class FindCitiesByFiltroImpl {
 
 
     public Page<City> execute(){
-        Specification<>
-
+        //todo criar specification
         return null;
     }
 }
