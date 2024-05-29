@@ -1,18 +1,10 @@
 package com.github.localizationAPI.dataprovider.repository.specification;
 
 import com.github.localizationAPI.dataprovider.repository.entity.CityEntity;
-import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 
 public abstract class CitySpecification {
 
-    public static Specification<CityEntity> teste(String name){
-        return (root, query, cb) -> {
-            Predicate predicate;
-            predicate = cb.like(root.get("name"), name);
-            return  predicate;
-        };
-    }
 
     public static Specification<CityEntity> nameLike(String name){
         return (root, query, cb) -> cb.like(root.get("name"), name );
